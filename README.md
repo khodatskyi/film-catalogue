@@ -4,6 +4,12 @@ Movie Catalog is a personal project developed as a frontend application. It util
 
 ---
 
+## Visit the Project
+
+You can visit the deployed version of the project [here](https://film-catalogue.web.app/main-content).
+
+---
+
 ## Features
 
 - **Home**: The main landing page of the application.
@@ -17,12 +23,6 @@ Movie Catalog is a personal project developed as a frontend application. It util
 - **Search**: Enables users to search for movies using keywords.
 - **Responsive Design**: The website is fully responsive, ensuring optimal viewing experience across various devices.
 - **Movie Details**: Clicking on a movie provides users with detailed information about it, including synopsis, cast, release date, and ratings. Users can also watch trailers directly from the movie details page.
-
----
-
-## Visit the Project
-
-You can visit the deployed version of the project [here](https://film-catalogue.web.app/main-content).
 
 ---
 
