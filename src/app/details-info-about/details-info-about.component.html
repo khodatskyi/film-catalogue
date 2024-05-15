@@ -1,0 +1,114 @@
+<div class="detail-container">
+  <div class="title-container">
+    <a class="back-arrow-container" href="javascript:void(0)" (click)="goBack()"><img src="/../assets/back-arrow.png"
+        alt="" />
+      <p>Back</p>
+    </a>
+    <h1 *ngIf="detailObject.title">{{ detailObject.title }}</h1>
+    <h1>{{ detailObject.name }}</h1>
+  </div>
+  <div class="upper-container">
+    <div class="left-side">
+      <img [src]="
+          'https://www.themoviedb.org/t/p/w780' + detailObject.backdrop_path
+        " alt="" />
+      <div class="overview">
+        <h2>OVERVIEW</h2>
+        <p>{{ detailObject.overview }}</p>
+      </div>
+    </div>
+    <div class="right-side">
+        <tr *ngIf="detailInfo.tagline">
+          <td>
+            <h2>Tagline</h2>
+          </td>
+          <td>
+            <p>{{ detailInfo.tagline }}</p>
+          </td>
+        </tr>
+        <tr *ngIf="detailInfo.genres">
+          <td>
+            <h2>Genres</h2>
+          </td>
+          <td>
+            <p *ngFor="let genre of detailInfo.genres">{{ genre.name }}</p>
+          </td>
+        </tr>
+        <tr *ngIf="detailObject.release_date || detailObject.first_air_date">
+          <td>
+            <h2>Release date</h2>
+          </td>
+          <td>
+            <p>
+              {{
+              detailObject.release_date || detailObject.first_air_date
+              | date : "longDate"
+              }}
+            </p>
+          </td>
+        </tr>
+        <tr *ngIf="detailInfo.budget">
+          <td>
+            <h2>Budget</h2>
+          </td>
+          <td>
+            <p>{{ detailInfo.budget | currency : "USD" : "symbol" : "1.0-0" }}</p>
+          </td>
+        </tr>
+        <tr *ngIf="detailInfo.revenue">
+          <td>
+            <h2>Revenue</h2>
+          </td>
+          <td>
+            <p>
+              {{ detailInfo.revenue | currency : "USD" : "symbol" : "1.0-0" }}
+            </p>
+          </td>
+        </tr>
+        <tr *ngIf="detailInfo.runtime">
+          <td>
+            <h2>Runtime</h2>
+          </td>
+          <td>
+            <p>{{ detailInfo.runtime }} min</p>
+          </td>
+        </tr>
+        <tr *ngIf="detailObject.vote_average">
+          <td>
+            <h2>Average vote</h2>
+          </td>
+          <td>
+            <p>{{ detailObject.vote_average | number : "1.1-1" }}</p>
+          </td>
+        </tr>
+        <tr *ngIf="detailInfo.production_countries">
+          <td>
+            <h2>Countries</h2>
+          </td>
+          <td>
+            <p *ngFor="let country of detailInfo.production_countries">
+              {{ country.name }}
+            </p>
+          </td>
+        </tr>
+        <tr *ngIf="detailInfo.production_companies">
+          <td>
+            <h2>Production</h2>
+          </td>
+          <td>
+            <p *ngFor="let company of detailInfo.production_companies">
+              {{ company.name }}
+            </p>
+          </td>
+        </tr>
+      </div> 
+  </div>
+  <div class="bottom-container">
+    <button (click)="pressAddToWatchList(detailObject)">
+      ADD TO WATCHLIST
+    </button>
+    <button (click)="pressToWatch(detailObject)">WATCH TRAILER</button>
+
+    <p-messages class="pop-message" [(value)]="message" [closable]="true"></p-messages>
+    </div>
+</div>

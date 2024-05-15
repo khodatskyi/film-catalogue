@@ -1,0 +1,61 @@
+@import "../../styles.scss";
+
+.container-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+}
+
+.card-item {
+  flex: 1;
+  min-width: 190px;
+  max-width: 220px;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 4px solid $second-back-color;
+  border-radius: 14px;
+  background-color: $back-color;
+
+  h2 {
+    align-items: center;
+    padding-bottom: 10px;
+  }
+
+  img {
+    border-radius: 10px;
+    width: 100%;
+    &:hover {
+      filter: saturate(110%) brightness(110%); // Увеличение насыщенности и яркости при наведении saturate(150%)
+    }
+  }
+
+  &:hover {
+    background-color:  lighten($back-color, 10%);
+  }
+}
+
+.next-prev-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+} 
+
+
+.card-next {
+  display: flex;
+  align-items: center;
+  width: auto;
+  padding: 10px 25px 10px 25px;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(109, 109, 109);
+  &:hover {
+    background-color: rgb(89, 89, 89);
+    transform: scale(1.1);
+  }
+}

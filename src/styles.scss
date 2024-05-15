@@ -1,0 +1,96 @@
+// @import "primeng/resources/themes/lara-light-blue/theme.css";
+// @import "primeng/resources/themes/md-dark-indigo/theme.css";
+@import "primeng/resources/themes/lara-light-teal/theme.css";
+@import "primeng/resources/primeng.css";
+
+$primary-color: #00b9ae;
+$second-primary-color: #f9f9f9;
+$third-primary-color: #d8d8d8ad;
+$second-back-color: #21242d;
+$back-color: #16181e;
+
+* {
+  margin: 0;
+  padding: 0;
+
+  &::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $second-back-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $second-back-color;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+}
+
+// Переназначаем стили для карусели
+
+
+
+
+.p-element {
+  
+  border-radius: 50%;
+}
+
+.p-carousel-container {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1350px) {
+  .p-carousel-content {
+    width: 1000px;
+    
+  }
+  .p-carousel-prev {
+    margin-right: 20px;
+  }
+
+  // .app-nav-menu {
+  //   font-size: 0.5rem;
+  // }
+}
+
+
+@media (max-width: 1280px) {
+  .p-carousel-content {
+    width: 800px;
+    
+  }
+
+
+}
+
+.p-carousel-item, .p-carousel-item-active {
+  width: 90px;
+}
+
+
+@media (max-width: 959px) {
+  .p-carousel-content {
+    width: 600px;
+    
+  }
+
+}
+@media (max-width: 599px) {
+  .p-carousel-content {
+    width: 420px;
+
+ 
+    
+  }
+
+
+  
+}
+
+#pn_id_2, #pn_id_1, .p-carousel-item {
+  display: flex;
+  justify-content: center;
+}

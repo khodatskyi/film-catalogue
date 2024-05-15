@@ -1,0 +1,21 @@
+<div class="suggestion-cards-container" [style.max-height]="condition ? '100vh' : '192vh'">
+  <h2>Suggestion for you</h2>
+
+  <div class="suggestion-card" *ngFor="let movie of movies" (click)="clickOnCard(movie)" routerLink="/detailInfo"
+    [ngStyle]="{
+      'background-image':
+        'url(https://www.themoviedb.org/t/p/w300/' + movie.backdrop_path + ')'
+    }">
+
+    <h2 class="movie-title">{{ movie.title || movie.name }}</h2>
+
+  </div>
+
+  <div *ngIf="movies.length === 0" class="suggestion-card empty-card">
+    <h4>Данные отсутствуют.</h4>
+    <p>
+      Начните добавлять фильмы в watchlist и через некоторое время вы будете
+      видеть тут рекомендации, которые подобраны специально для вас.
+    </p>
+  </div>
+</div>

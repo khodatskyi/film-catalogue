@@ -1,0 +1,54 @@
+<div class="logo-container">
+  <img src="../../assets/icons8-logo-100.png" alt="" />
+  <h4>FILM catalog</h4>
+</div>
+<div class="logo-container-link">
+  <a (click)="isVisible = !isVisible">
+    <img *ngIf="!isVisible" src="../../assets/icons8-logo-100.png" alt="" />
+    <img *ngIf="isVisible" src="../../assets/xmark.png" alt="" />
+  </a>
+</div>
+<div class="nav-menu">
+  <div class="links">
+    <a href="#" routerLink="/main-content">Home</a>
+    <a href="#" routerLink="/catalog" (click)="updateCategory('topRated')"
+      >Top Rated</a
+    >
+    <a href="#" routerLink="/catalog" (click)="updateCategory('upcoming')"
+      >Upcoming</a
+    >
+    <a href="#" routerLink="/celebrities">Celebrities</a>
+    <a href="#" routerLink="/watchlist" (click)="updateCategory('watchlist')"
+      >Watchlist</a
+    >
+  </div>
+
+  <nav *ngIf="isVisible" [class.visible]="isVisible">
+    <ul>
+      <li>
+        <a href="#" routerLink="/main-content">Home</a>
+      </li>
+      <li>
+        <a href="#" routerLink="/catalog" (click)="updateCategory('topRated')"
+          >Top Rated</a
+        >
+      </li>
+      <li>
+        <a href="#" routerLink="/catalog" (click)="updateCategory('upcoming')"
+          >Upcoming</a
+        >
+      </li>
+      <li>
+        <a href="#" routerLink="/celebrities">Celebrities</a>
+      </li>
+      <li>
+        <a
+          href="#"
+          routerLink="/watchlist"
+          (click)="updateCategory('watchlist')"
+          >Watchlist</a
+        >
+      </li>
+    </ul>
+  </nav>
+</div>

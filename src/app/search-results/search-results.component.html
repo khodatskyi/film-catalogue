@@ -1,0 +1,9 @@
+<div class="container-card">
+    <div class="card-item" *ngFor="let movie of searchMovies" (click)="clickOnCard(movie)" routerLink="/detailInfo">
+      <img
+        [src]="'https://www.themoviedb.org/t/p/w185' + movie.poster_path"
+        alt=""
+      />
+      <h2>{{ movie.title }}</h2>
+    </div>
+  </div>

@@ -1,0 +1,182 @@
+@import "../../styles.scss";
+
+.main {
+  // height: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5rem 0 5rem;
+
+  .carousel {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    background-color: rgb(196, 196, 196);
+    border-radius: 20px;
+    justify-content: space-between;
+
+    .arrows-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 5rem;
+      text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.9);
+    }
+
+    a {
+      text-decoration: none;
+      color: $second-primary-color;
+    }
+
+    .left {
+      background-color: $third-primary-color;
+      padding: 6rem 3rem 6rem 3rem;
+    }
+    .right {
+      background-color: $third-primary-color;
+      padding: 1rem;
+      padding: 6rem 3rem 6rem 3rem;
+    }
+
+    .watchlist {
+      background-color: $third-primary-color;
+    }
+    .watchnow {
+      background-color: $primary-color;
+      color: $back-color;
+    }
+
+    .watchlist,
+    .watchnow {
+      width: 140px;
+      text-align: center;
+      padding: 1rem 4rem 1rem 4rem;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+  }
+
+  .popular-container {
+    display: flex;
+    flex-direction: column;
+    height: 435px;
+
+    .popular-title {
+      margin: 0 0 1rem 0;
+    }
+
+    .popular-cards-container {
+      display: block;
+      flex-direction: row;
+
+      .popular-card {
+        background-size: cover;
+        width: 200px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        border-radius: 20px;
+        &:hover {
+          filter: brightness(115%);
+          cursor: pointer;
+        }
+        
+        p {
+          margin-top: 0.5rem;
+        }
+
+        .popular-buttons-container {
+          margin-bottom: 1.6rem;
+          margin: 0 0 0.3rem 0;
+          padding: 0 0.6rem 0 0.5rem;
+          display: flex;
+          justify-content: center;
+          gap: 0.5rem;
+        }
+      }
+    }
+
+    p,
+    a {
+      text-decoration: none;
+      color: $back-color;
+    }
+    p {
+      text-align: center;
+      color: black;
+      font-size: 1.5rem;
+      top: 0;
+      left: 10%;
+      font-weight: bold;
+      color: $second-primary-color;
+      text-shadow: 0 0 5px #fff, 0 0 10px #0a0909, 0 0 15px #2c2c2c,
+        0 0 20px #191919, 0 0 30px #0e0e0e, 0 0 40px #292929, 0 0 55px #262626,
+        0 0 75px #171717;
+    }
+
+    .watchnow {
+      text-align: center;
+      font-size: 1.5rem;
+      background-color: $primary-color;
+      padding: 1rem 1.2rem 1rem 1.2rem;
+      border-radius: 10px;
+      color: $back-color;
+      font-weight: bold;
+    }
+  }
+
+  .plus {
+    background-color: $third-primary-color;
+    padding: 1.1rem 1.2rem 1.1rem 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  a {
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.main {
+  margin: 0;
+}
+
+@media (max-width: 1350px) {
+  .popular-title > h2{
+    text-align: center;
+  }
+}
+@media (min-width: 1350px) {
+  .popular-title > h2{
+  margin: 1rem 0 0 5rem;
+}
+}
+@media (max-width: 1100px) {
+  .popular-container {
+    p-carousel {
+      width: 800px;
+    }
+  }
+}
+

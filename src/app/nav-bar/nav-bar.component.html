@@ -1,0 +1,20 @@
+<div class="nav-bar">
+  <a href="#" routerLink="/catalog" (click)="updateCategory('movies')"
+    >Movies</a
+  >
+  <a href="#" routerLink="/catalog" (click)="updateCategory('tvShows')"
+    >TV Shows</a
+  >
+
+  <div class="search-container">
+    <input [(ngModel)]="searchTerm" placeholder="Search" />
+    <div class="img-search-container">
+      <img
+        src="../../assets/search.png"
+        alt=""
+        (click)="search()"
+        routerLink="/searchResults"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+
+<div class="container-card">
+    <div class="card-item" *ngFor="let celebrities of celebritiesArray" (click)="clickOnCard(celebrities)" routerLink="/about-person">
+      <img
+        [src]="'https://www.themoviedb.org/t/p/w185' + celebrities.profile_path"
+        alt=""
+      />
+      <h2>{{ celebrities.name }}</h2>
+    </div>
+  </div>

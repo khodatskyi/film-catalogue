@@ -1,0 +1,25 @@
+<div class="container-card">
+  <div
+    class="card-item"
+    *ngFor="let movie of array"
+    (click)="clickOnCard(movie)"
+    routerLink="/detailInfo"
+  >
+    <img
+      [src]="'https://www.themoviedb.org/t/p/w185' + movie.poster_path"
+      alt=""
+    />
+    <h2>{{ movie.title || movie.name }}</h2>
+  </div>
+
+</div>
+<div class="next-prev-buttons">
+
+  <div *ngIf="currentPage >= 2 && selectedCategory == 'upcoming'" class="card-next" (click)="clickOnPrevCard()">
+    <h2>Prev</h2>
+  </div>
+  <div *ngIf="selectedCategory == 'upcoming'" class="card-next" (click)="clickOnNextCard()">
+    <h2>Next</h2>
+  </div>
+</div>
+

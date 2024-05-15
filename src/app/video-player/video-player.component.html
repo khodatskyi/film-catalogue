@@ -1,0 +1,16 @@
+<div
+  class="player-container"
+  [style.display]="isDestroyed ? 'none' : 'block'"
+  [style.z-index]="zIndex ? '9999' : '0'"
+
+>
+  <div class="player-container-description"  [style.z-index]="zIndex ? '9999' : '0'">
+    <a class="back-arrow-container" href="javascript:void(0)" (click)="goBack()"
+    ><img src="/../assets/back-arrow.png" alt="" />
+    <p>Back</p></a
+  >
+  </div>
+  <div class="video-player-container"   #playerContainer>
+
+  </div>
+</div>

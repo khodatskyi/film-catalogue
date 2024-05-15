@@ -1,0 +1,81 @@
+@import "../../styles.scss";
+
+.nav-bar {
+  display: flex;
+  height: 100px;
+
+  align-items: center;
+  justify-content: space-around;
+
+  a {
+    color: $second-primary-color;
+    text-decoration: none;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: $primary-color;
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+
+  .search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $second-back-color;
+    padding: 1px;
+    border-radius: 10px;
+
+    input {
+      background-color: $second-back-color;
+      color: $second-primary-color;
+      border: none;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+    .img-search-container {
+      width: 35px;
+      background-color: $second-back-color;
+      margin-right: 10px;
+      padding-right: 10px;
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+
+      img {
+        width: 100%;
+        background-color: $second-back-color;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .search-container > input {
+    width: 100px;
+  }
+
+  .nav-bar > a {
+    font-size: 1.3rem;
+
+  }
+}
+@media screen and (max-width: 500px) {
+  .search-container > input {
+    width: 80px;
+  }
+
+  .nav-bar > a {
+    font-size: 1.1rem;
+
+  }
+}
+

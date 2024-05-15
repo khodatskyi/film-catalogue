@@ -1,0 +1,14 @@
+<div class="container-card">
+  <div *ngFor="let card of dataArray" class="card-item" (click)="clickOnCard(card)" routerLink="/detailInfo">
+    <div class="img-container"
+      [style.background-image]="'url(https://www.themoviedb.org/t/p/w185' + card.poster_path + ')'">
+
+      <div class="minus" (click)="clickOnMinus(card)">
+        <img src="/../assets/minus.png" alt="">
+      </div>
+
+    </div>
+    <h2 *ngIf="card.title">{{ card.title }}</h2>
+    <h2 *ngIf="card.name">{{ card.name }}</h2>
+  </div>
+</div>

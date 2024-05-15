@@ -1,0 +1,52 @@
+<div class="main">
+  <app-carousel
+    [popularTVSeries]="popularTVSeries"
+    style="margin-top: 2rem"
+  ></app-carousel>
+
+  <p-messages [(value)]="message" [enableService]="false" [closable]="false"
+    >Sorry, we don`t have video</p-messages
+  >
+
+  <div class="popular-container">
+    <div class="popular-title">
+      <h2>Popular on FILM catalog</h2>
+    </div>
+
+    <div class="popular-cards-container">
+      <p-carousel [value]="popularCard" [numVisible]="carouselIterator" [numScroll]="1">
+        <ng-template let-card class="popular-card" pTemplate="item">
+          <div
+            class="popular-card"
+            [ngStyle]="{
+              'background-image':
+                'url(https://www.themoviedb.org/t/p/w500/' +
+                card.poster_path +
+                ')'
+            }"
+            (click)="clickOnCard(card, $event)"
+            routerLink="/detailInfo"
+          >
+            <p class="popular-card-title">{{ card.title }}</p>
+
+            <div class="popular-buttons-container">
+              <a
+                href="javascript:void(0)"
+                class="plus"
+                (click)="pressAddToWatchList(card, $event)"
+              >
+                <img src="/../assets/plus.png" alt="" />
+              </a>
+              <a
+                href="javascript:void(0)"
+                class="watchnow"
+                (click)="pressToWatch(card, $event)"
+                >Watch</a
+              >
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</div>

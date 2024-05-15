@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="title-container">
+    <a class="back-arrow-container" href="javascript:void(0)" (click)="goBack()"
+      ><img src="/../assets/back-arrow.png" alt="" />
+      <p>Back</p></a
+    >
+    <h1>{{ infoAboutPerson.name }}</h1>
+  </div>
+
+  <div class="person-container">
+    <div class="left-side">
+      <img
+        [src]="
+          'https://www.themoviedb.org/t/p/w780' + infoAboutPerson.profile_path
+        "
+        alt=""
+      />
+    </div>
+    <div class="right-side">
+      <tr *ngIf="infoAboutPerson.name">
+        <td><h2>Name</h2></td>
+        <td>
+          <p>{{ infoAboutPerson.name }}</p>
+        </td>
+      </tr>
+      <tr *ngIf="infoAboutPerson.birthday">
+        <td><h2>Birthday</h2></td>
+        <td>
+          <p>{{ infoAboutPerson.birthday }}</p>
+        </td>
+      </tr>
+      <tr *ngIf="infoAboutPerson.place_of_birth">
+        <td><h2>Place of birth</h2></td>
+        <td>
+          <p>{{ infoAboutPerson.place_of_birth }}</p>
+        </td>
+      </tr>
+      <tr *ngIf="infoAboutPerson.biography">
+        <td><h2>Biography</h2></td>
+        <td>
+          <div class="biography">
+            <p>{{ infoAboutPerson.biography }}</p>
+          </div>
+        </td>
+      </tr>
+    </div>
+  </div>
+
+  <h1 class="container-card-h1">We know this actor from these films</h1>
+  <div class="container-card">
+    <div
+      class="card-item"
+      *ngFor="let movie of infoAboutPersonMovies"
+      (click)="clickOnCard(movie)"
+      routerLink="/detailInfo"
+    >
+      <img
+        [src]="'https://www.themoviedb.org/t/p/w185' + movie.poster_path"
+        alt=""
+      />
+      <img
+        *ngIf="!movie.poster_path"
+        src="https://img.freepik.com/free-photo/vertical-design-of-gray-textured-concrete-background_166373-1449.jpg"
+        alt=""
+      />
+      <h2>{{ movie.title || movie.name }}</h2>
+    </div>
+  </div>
+</div>
